@@ -1,26 +1,20 @@
-# AI Study Assistant
+AI Study Assistant
 
 I built this because I was tired of manually making flashcards and re-reading notes before exams. Upload your study materials (PDFs, Word docs, images, plain text) and let AI do the heavy lifting — summaries, flashcards, quizzes, even predicted exam questions.
 
-## What it does
+What it does
 
-- Upload notes in PDF, DOCX, TXT, or even photos of handwritten notes (OCR handles that)
-- Generate summaries, flashcards, and quizzes from your materials with one click
-- Take quizzes and track your scores over time
-- Get AI-predicted exam questions based on your notes
-- Search across all your uploaded stuff
-- Export flashcards to PDF
-- Dark mode, mobile friendly, the usual
+Upload notes in PDF, DOCX, TXT, or even photos of handwritten notes (OCR handles that). Generate summaries, flashcards, and quizzes from your materials with one click. Take quizzes and track your scores over time. Get AI-predicted exam questions based on your notes. Search across all your uploaded stuff. Export flashcards to PDF. Dark mode, mobile friendly, the usual.
 
-## Built with
+Built with
 
-- **Frontend:** React, Vite, TailwindCSS, Recharts for the analytics charts
-- **Backend:** Node.js + Express, SQLite (better-sqlite3)
-- **AI:** Google Gemini API (gemini-2.5-flash)
-- **Auth:** JWT + bcrypt
-- **File parsing:** pdf-parse, mammoth (for .docx), tesseract.js (OCR)
+Frontend: React, Vite, TailwindCSS, Recharts for the analytics charts
+Backend: Node.js + Express, SQLite (better-sqlite3)
+AI: Google Gemini API (gemini-2.5-flash)
+Auth: JWT + bcrypt
+File parsing: pdf-parse, mammoth (for .docx), tesseract.js (OCR)
 
-## Project layout
+Project layout
 
 ```
 backend/
@@ -43,11 +37,11 @@ frontend/
     App.jsx
 ```
 
-## Database
+Database
 
 SQLite with 6 tables — users, study_materials, flashcards, quizzes, quiz_results, and study_sessions. Foreign keys and indexes are set up in `database/init.js`. Nothing fancy, just gets the job done without needing to run a separate DB server.
 
-## API routes
+API routes
 
 ```
 POST   /api/auth/signup              register
@@ -83,7 +77,7 @@ PATCH  /api/analytics/sessions/:id/end       end study session
 
 All routes except auth require a JWT token in the `Authorization` header.
 
-## Getting started
+Getting started
 
 You'll need Node 18+ and a [Google Gemini API key](https://aistudio.google.com/apikey).
 
@@ -129,17 +123,12 @@ npm run dev
 
 Frontend is at `http://localhost:5173`, backend at `http://localhost:5000`. The Vite config proxies `/api` requests to the backend so everything just works.
 
-## Deploying
+Deploying
 
-**Backend** (Render, Railway, whatever): set your env vars, `npm install`, `npm start`. Make sure `data/` and `uploads/` are on persistent storage or your DB and files will disappear on redeploy.
+Backend (Render, Railway, whatever): set your env vars, `npm install`, `npm start`. Make sure `data/` and `uploads/` are on persistent storage or your DB and files will disappear on redeploy.
 
-**Frontend** (Vercel, Netlify): build command is `npm run build`, output dir is `dist`. You'll need to set up a rewrite/proxy to point `/api/*` at your backend URL.
+Frontend (Vercel, Netlify): build command is `npm run build`, output dir is `dist`. You'll need to set up a rewrite/proxy to point `/api/*` at your backend URL.
 
-## Stuff I might add later
+Stuff I might add later
 
-- Spaced repetition (SM-2) for smarter flashcard scheduling
-- Study groups / sharing materials
-- Voice notes with speech-to-text
-- Chat-style AI tutor for Q&A
-- OAuth (Google, GitHub login)
-- Offline/PWA support
+Spaced repetition (SM-2) for smarter flashcard scheduling. Study groups / sharing materials. Voice notes with speech-to-text. Chat-style AI tutor for Q&A. OAuth (Google, GitHub login). Offline/PWA support.
