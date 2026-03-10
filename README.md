@@ -19,21 +19,21 @@ Project layout
 ```
 backend/
   src/
-    config/          # env / app config
-    controllers/     # request handlers
-    database/        # sqlite setup + schema
-    middleware/      # auth, error handling, file uploads
-    models/          # data access (User, StudyMaterial, Flashcard, etc.)
-    routes/          # API routes
-    services/        # AI calls, file parsing, PDF export
-    server.js        # entry point
+    config/           env / app config
+    controllers/      request handlers
+    database/         sqlite setup + schema
+    middleware/       auth, error handling, file uploads
+    models/           data access (User, StudyMaterial, Flashcard, etc.)
+    routes/           API routes
+    services/         AI calls, file parsing, PDF export
+    server.js         entry point
 
 frontend/
   src/
-    components/      # Layout, spinner, protected route wrapper
-    context/         # Auth + theme providers
-    pages/           # all the pages (dashboard, upload, quizzes, etc.)
-    services/api.js  # axios client
+    components/       Layout, spinner, protected route wrapper
+    context/          Auth + theme providers
+    pages/            all the pages (dashboard, upload, quizzes, etc.)
+    services/api.js   axios client
     App.jsx
 ```
 
@@ -82,16 +82,16 @@ Getting started
 You'll need Node 18+ and a [Google Gemini API key](https://aistudio.google.com/apikey).
 
 ```bash
-# clone it
+ clone it
 git clone <your-repo-url>
 cd AI-Study-Assistant
 
-# backend
+ backend
 cd backend
 cp .env.example .env
 npm install
 
-# frontend
+ frontend
 cd ../frontend
 npm install
 ```
@@ -112,11 +112,11 @@ UPLOAD_DIR=./uploads
 Then run both:
 
 ```bash
-# terminal 1
+ terminal 1
 cd backend
 npm run dev
 
-# terminal 2
+ terminal 2
 cd frontend
 npm run dev
 ```
